@@ -4,7 +4,7 @@ import {ms, mvs} from 'react-native-size-matters';
 // STACKS & SCREENS
 import {HomeNavigator} from '../home-navigation';
 import {MatchNavigator} from '../match-navigation';
-import {CameraNavigator} from '../camera-navigation';
+
 import {ChatNavigator} from '../chat-navigation';
 import {NotificationNavigator} from '../notification-navigation';
 import {TabParams} from './type';
@@ -16,6 +16,7 @@ import HeartIcon from '../../assets/svg/heart.svg';
 import NotificationIcon from '../../assets/svg/notification.svg';
 import FilledNotificationIcon from '../../assets/svg/notification-filled.svg';
 import PlusIcon from '../../assets/svg/gradient-plus.svg';
+import {DrawerNavigator} from '../Drawer-navigation';
 
 export const tabs = [
   {
@@ -46,8 +47,8 @@ export const tabs = [
   },
   {
     id: '3',
-    component: CameraNavigator,
-    name: TabParams.Camera,
+    component: DrawerNavigator,
+    name: TabParams.Drawer,
     options: {
       title: '',
       tabBarIcon: () => (

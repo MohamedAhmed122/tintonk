@@ -11,8 +11,7 @@ import {
   AppNavigationType,
 } from './navigation/app-navigation/type';
 import {AuthParams} from './navigation/auth-navigation/type';
-import {CameraParams} from './navigation/camera-navigation/type';
-import HeartIcon from './assets/svg/comment.svg';
+import {DrawerParams} from './navigation/Drawer-navigation/type';
 
 // Auth Navigation -->
 export function LoginScreen({navigation}: {navigation: AppNavigationType}) {
@@ -31,9 +30,9 @@ export function LoginScreen({navigation}: {navigation: AppNavigationType}) {
         title="Navigate to VideoList"
         onPress={() =>
           navigation.navigate(AppNavigationParams.Tab, {
-            screen: TabParams.Camera,
+            screen: TabParams.Drawer,
             params: {
-              screen: CameraParams.Camera,
+              screen: DrawerParams.CameraDrawer,
             },
           })
         }
