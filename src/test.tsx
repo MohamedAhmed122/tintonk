@@ -2,16 +2,16 @@ import {Button, Text, View} from 'react-native';
 import React from 'react';
 
 import {
-  HomeNavigationType,
-  HomeParams,
-} from './navigation/home-navigation/type';
-import {TabNavigationType, TabParams} from './navigation/tab-navigation/type';
-import {
   AppNavigationParams,
   AppNavigationType,
-} from './navigation/app-navigation/type';
-import {AuthParams} from './navigation/auth-navigation/type';
-import {DrawerParams} from './navigation/Drawer-navigation/type';
+  AuthParams,
+  DrawerParams,
+  HomeNavigationType,
+  HomeParams,
+  TabNavigationType,
+  TabParams,
+  navigationService,
+} from './navigation';
 
 // Auth Navigation -->
 export function LoginScreen({navigation}: {navigation: AppNavigationType}) {
@@ -21,7 +21,10 @@ export function LoginScreen({navigation}: {navigation: AppNavigationType}) {
       <Button
         title="Navigate to Register"
         onPress={() =>
-          navigation.navigate(AppNavigationParams.Auth, {
+          // navigation.navigate(AppNavigationParams.Auth, {
+          //   screen: AuthParams.Register,
+          // })
+          navigationService.navigate(AppNavigationParams.Auth, {
             screen: AuthParams.Register,
           })
         }

@@ -1,13 +1,12 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {ms, mvs} from 'react-native-size-matters';
-// STACKS & SCREENS
+
 import {HomeNavigator} from '../home-navigation';
 import {MatchNavigator} from '../match-navigation';
-
 import {ChatNavigator} from '../chat-navigation';
 import {NotificationNavigator} from '../notification-navigation';
-import {TabParams} from './type';
+import {DrawerNavigator} from '../Drawer-navigation';
 // Icons
 import HomeIcon from '../../assets/svg/home.svg';
 import FilledHomeIcon from '../../assets/svg/home-fill.svg';
@@ -16,7 +15,7 @@ import HeartIcon from '../../assets/svg/heart.svg';
 import NotificationIcon from '../../assets/svg/notification.svg';
 import FilledNotificationIcon from '../../assets/svg/notification-filled.svg';
 import PlusIcon from '../../assets/svg/gradient-plus.svg';
-import {DrawerNavigator} from '../Drawer-navigation';
+import {TabParams} from './type';
 
 export const tabs = [
   {
@@ -97,9 +96,9 @@ const styles = StyleSheet.create({
     height: mvs(65),
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 30,
+    borderRadius: 35,
     borderWidth: ms(5),
     borderColor: 'rgb(242, 242, 242)',
-    marginTop: -mvs(25),
+    marginTop: -mvs(30),
   },
 });

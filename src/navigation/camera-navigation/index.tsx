@@ -1,9 +1,7 @@
 import React from 'react';
-
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {CameraParams, CameraParamList} from './type';
-
 import {CameraScreen, RecordScreen} from '../../test';
 
 const Stack = createNativeStackNavigator<CameraParamList>();

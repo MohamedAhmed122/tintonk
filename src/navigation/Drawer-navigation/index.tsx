@@ -1,10 +1,11 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
+
 import {CameraNavigator} from '../camera-navigation';
-import {DrawerParamList, DrawerParams} from './type';
 import {ProfileNavigator} from '../profile-navigation';
 import {SettingNavigator} from '../setting-navigation';
+import {DrawerParamList, DrawerParams} from './type';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 export const DrawerNavigator = () => {
@@ -14,6 +15,7 @@ export const DrawerNavigator = () => {
       screenOptions={{
         drawerPosition: 'right',
       }}
+      // TODO: Create custom drawerContent
       //   drawerContent={props => <DrawerContent {...props} />}
     >
       <Drawer.Screen
