@@ -20,6 +20,7 @@ module.exports = {
           '@Shared': './src/shared',
           '@Screens': './src/screens',
           '@Navigation': './src/navigation',
+          '@Provider': './src/provider',
         },
       },
     ],

@@ -12,7 +12,8 @@
       "tests": ["tests/*"],
       "@Shared/*": ["src/shared/*"],
       "@Screens/*": ["src/screens/*"],
-      "@Navigation/*": ["src/navigation/*"]
+      "@Navigation/*": ["src/navigation/*"],
+      "@Provider/*": ["src/provider/*"]
     }
   }
   
