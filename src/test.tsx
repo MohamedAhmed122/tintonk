@@ -1,4 +1,5 @@
 import {Button, Text, View} from 'react-native';
+import {Text as PaperText} from 'react-native-paper';
 import React from 'react';
 
 import {
@@ -17,7 +18,7 @@ import {
 export function LoginScreen({navigation}: {navigation: AppNavigationType}) {
   return (
     <View style={{paddingTop: 50}}>
-      <Text>LoginScreen</Text>
+      <PaperText variant="titleSmall">Display Large </PaperText>
       <Button
         title="Navigate to Register"
         onPress={() =>
