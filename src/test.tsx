@@ -1,5 +1,5 @@
 import {Button, Text, View} from 'react-native';
-import {Text as PaperText} from 'react-native-paper';
+
 import React from 'react';
 
 import {
@@ -13,6 +13,7 @@ import {
   TabParams,
   navigationService,
 } from './navigation';
+import {PaperText} from '@Shared/ui';
 
 // Auth Navigation -->
 export function LoginScreen({navigation}: {navigation: AppNavigationType}) {

@@ -8,13 +8,13 @@ import {ChatNavigator} from '../chat-navigation';
 import {NotificationNavigator} from '../notification-navigation';
 import {DrawerNavigator} from '../Drawer-navigation';
 // Icons
-import HomeIcon from '../../assets/svg/home.svg';
-import FilledHomeIcon from '../../assets/svg/home-fill.svg';
-import MessageIcon from '../../assets/svg/comment.svg';
-import HeartIcon from '../../assets/svg/heart.svg';
-import NotificationIcon from '../../assets/svg/notification.svg';
-import FilledNotificationIcon from '../../assets/svg/notification-filled.svg';
-import PlusIcon from '../../assets/svg/gradient-plus.svg';
+import HomeIcon from '@Shared/assets/svg/home.svg';
+import FilledHomeIcon from '@Shared/assets/svg/home-fill.svg';
+import MessageIcon from '@Shared/assets/svg/comment.svg';
+import HeartIcon from '@Shared/assets/svg/heart.svg';
+import NotificationIcon from '@Shared/assets/svg/notification.svg';
+import FilledNotificationIcon from '@Shared/assets/svg/notification-filled.svg';
+import PlusIcon from '@Shared/assets/svg/gradient-plus.svg';
 import {TabParams} from './type';
 
 export const tabs = [

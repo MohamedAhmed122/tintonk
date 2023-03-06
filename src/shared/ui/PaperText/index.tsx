@@ -1,4 +1,8 @@
 import React from 'react';
-import {customText} from 'react-native-paper';
+import {Text, TextProps} from 'react-native-paper';
 
-export const PaperText = customText<'customVariant'>();
+interface PaperTextProps extends TextProps {}
+
+export const PaperText: React.FC<PaperTextProps> = ({...props}) => {
+  return <Text {...props} />;
+};
