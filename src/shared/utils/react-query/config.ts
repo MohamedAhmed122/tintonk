@@ -12,6 +12,8 @@ export const queryClient = new QueryClient({
         allPages.flat().length === allPages.length * 20
           ? allPages.length + 1
           : false,
+
+      // eslint-disable-next-line no-console
       onError: error => console.log('error:', error),
     },
   },
