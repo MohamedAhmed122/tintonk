@@ -1,9 +1,10 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
 import {TabParamList} from './type';
-import {tabs} from './tabs';
+import {TAB_HEIGHT, tabs} from './tabs';
+import {ms, mvs} from 'react-native-size-matters';
+import {theme} from '@Shared/theme';
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -13,6 +14,8 @@ export const TabNavigation = () => {
       screenOptions={{
         headerShown: false,
         tabBarStyle: styles.tabBarStyle,
+        tabBarActiveTintColor: theme.colors.white,
+        tabBarInactiveTintColor: theme.colors.lemonade,
       }}>
       {tabs.map(tab => (
         <Tab.Screen
@@ -28,6 +31,11 @@ export const TabNavigation = () => {
 
 const styles = StyleSheet.create({
   tabBarStyle: {
-    borderRadius: 20,
+    position: 'absolute',
+    left: ms(20),
+    right: ms(20),
+    bottom: mvs(30),
+    height: TAB_HEIGHT,
+    borderRadius: 45,
   },
 });

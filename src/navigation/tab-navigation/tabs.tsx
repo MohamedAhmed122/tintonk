@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {ms, mvs} from 'react-native-size-matters';
+import {mvs} from 'react-native-size-matters';
 
 import {HomeNavigator} from '../home-navigation';
 import {MatchNavigator} from '../match-navigation';
@@ -8,14 +8,16 @@ import {ChatNavigator} from '../chat-navigation';
 import {NotificationNavigator} from '../notification-navigation';
 import {DrawerNavigator} from '../Drawer-navigation';
 // Icons
-import HomeIcon from '@Shared/assets/svg/home.svg';
-import FilledHomeIcon from '@Shared/assets/svg/home-fill.svg';
-import MessageIcon from '@Shared/assets/svg/comment.svg';
-import HeartIcon from '@Shared/assets/svg/heart.svg';
-import NotificationIcon from '@Shared/assets/svg/notification.svg';
-import FilledNotificationIcon from '@Shared/assets/svg/notification-filled.svg';
-import PlusIcon from '@Shared/assets/svg/gradient-plus.svg';
 import {TabParams} from './type';
+import Entypo from 'react-native-vector-icons/Entypo';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+import {theme} from '@Shared/theme';
+export const TAB_HEIGHT = mvs(65);
+
+type TabProps = {focused: boolean; color: string};
 
 export const tabs = [
   {
@@ -24,9 +26,9 @@ export const tabs = [
     name: TabParams.Home,
     options: {
       title: '',
-      tabBarIcon: ({focused}: {focused: boolean}) => (
-        <IconContainer>
-          {focused ? <FilledHomeIcon /> : <HomeIcon />}
+      tabBarIcon: ({focused, color}: TabProps) => (
+        <IconContainer focused={focused}>
+          <FontAwesome5 name={'hand-holding-heart'} size={30} color={color} />
         </IconContainer>
       ),
     },
@@ -37,9 +39,9 @@ export const tabs = [
     name: TabParams.Match,
     options: {
       title: '',
-      tabBarIcon: ({focused}: {focused: boolean}) => (
-        <IconContainer>
-          <HeartIcon fill={focused ? '#82A2BF' : '#ffffff'} />
+      tabBarIcon: ({focused, color}: TabProps) => (
+        <IconContainer focused={focused}>
+          <Entypo name="location" size={30} color={color} />
         </IconContainer>
       ),
     },
@@ -50,10 +52,14 @@ export const tabs = [
     name: TabParams.Drawer,
     options: {
       title: '',
-      tabBarIcon: () => (
-        <View style={styles.plusIcon}>
-          <PlusIcon width={35} height={35} />
-        </View>
+      tabBarIcon: ({focused, color}: TabProps) => (
+        <IconContainer focused={focused}>
+          <Entypo
+            color={color}
+            size={30}
+            name={focused ? 'circle-with-plus' : 'plus'}
+          />
+        </IconContainer>
       ),
     },
   },
@@ -63,9 +69,9 @@ export const tabs = [
     name: TabParams.Chat,
     options: {
       title: '',
-      tabBarIcon: () => (
-        <IconContainer>
-          <MessageIcon />
+      tabBarIcon: ({focused, color}: TabProps) => (
+        <IconContainer focused={focused}>
+          <MaterialIcons color={color} size={32} name={'group'} />
         </IconContainer>
       ),
     },
@@ -77,28 +83,42 @@ export const tabs = [
     name: TabParams.Notification,
     options: {
       title: '',
-      tabBarIcon: ({focused}: {focused: boolean}) => (
-        <IconContainer>
-          {focused ? <FilledNotificationIcon /> : <NotificationIcon />}
+      tabBarIcon: ({focused, color}: TabProps) => (
+        <IconContainer focused={focused}>
+          <Ionicons
+            color={color}
+            size={30}
+            name={
+              focused ? 'md-chatbubble-ellipses' : 'chatbubble-ellipses-outline'
+            }
+          />
         </IconContainer>
       ),
     },
   },
 ];
-const IconContainer = ({children}: {children: React.ReactNode}) => (
-  <View style={{marginTop: mvs(20)}}>{children}</View>
+const IconContainer = ({
+  children,
+  focused,
+}: {
+  children: React.ReactNode;
+  focused: boolean;
+}) => (
+  <View style={[styles.iconContainer, focused && styles.ActiveIcon]}>
+    {children}
+  </View>
 );
 
 const styles = StyleSheet.create({
-  plusIcon: {
-    backgroundColor: 'white',
-    width: ms(65),
-    height: mvs(65),
+  iconContainer: {
+    width: 45,
+    height: 45,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 35,
-    borderWidth: ms(5),
-    borderColor: 'rgb(242, 242, 242)',
-    marginTop: -mvs(30),
+    borderRadius: 22,
+    marginTop: TAB_HEIGHT / 1.7,
+  },
+  ActiveIcon: {
+    backgroundColor: theme.colors.primary,
   },
 });
