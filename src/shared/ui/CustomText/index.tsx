@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Text, TextProps} from 'react-native';
+import {StyleProp, Text, TextProps, TextStyle} from 'react-native';
 import {styles} from './style';
 
 enum FontType {
@@ -12,14 +12,16 @@ enum FontType {
   subtitle2 = 'subtitle2',
 }
 
-interface CustomTextProps extends TextProps {
+interface CustomTextProps extends Omit<TextProps, 'style'> {
   fontType?: 'h1' | 'h2' | 'h3' | 'p' | 'subtitle1' | 'subtitle2';
   color?: string;
+  textStyle?: StyleProp<TextStyle>;
 }
 
 export const CustomText: React.FC<CustomTextProps> = ({
   fontType,
   color,
+  textStyle,
   ...props
 }) => {
   return (
@@ -31,7 +33,7 @@ export const CustomText: React.FC<CustomTextProps> = ({
         fontType === FontType.p && styles.pStyle,
         fontType === FontType.subtitle1 && styles.subtitle1Style,
         fontType === FontType.subtitle2 && styles.subtitle2Style,
-
+        textStyle,
         {color},
       ]}
       {...props}
