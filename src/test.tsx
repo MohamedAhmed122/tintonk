@@ -3,23 +3,23 @@ import {Button, Text, View, StyleSheet} from 'react-native';
 import React from 'react';
 
 import {
-  AppNavigationParams,
-  AppNavigationType,
+  TabParams,
+  HomeParams,
   AuthParams,
   DrawerParams,
-  HomeNavigationType,
-  HomeParams,
-  TabNavigationType,
-  TabParams,
   navigationService,
+  AppNavigationType,
+  TabNavigationType,
+  HomeNavigationType,
+  AppNavigationParams,
 } from './navigation';
-import {PaperText} from '@Shared/ui';
+import {CustomText} from '@Shared/ui';
 
 // Auth Navigation -->
 export function LoginScreen({navigation}: {navigation: AppNavigationType}) {
   return (
     <View style={styles.container}>
-      <PaperText variant="titleSmall">Display Large </PaperText>
+      <CustomText fontType="p">Display Large </CustomText>
       <Button
         title="Navigate to Register"
         onPress={() =>

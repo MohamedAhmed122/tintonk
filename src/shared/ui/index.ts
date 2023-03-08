@@ -1,1 +1,1 @@
-export * from './PaperText';
+export * from './CustomText';
